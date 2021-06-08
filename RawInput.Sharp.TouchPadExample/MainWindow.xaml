@@ -1,0 +1,32 @@
+﻿<Window x:Class="RawInput.Sharp.TouchPadExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Name="WindowRoot"
+        Title="RawInput.Sharp TouchPad"
+        Height="200" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.Row="0"
+                   Margin="10,5"
+                   Text="Current:"/>
+        <TextBlock Grid.Column="1" Grid.Row="0"
+                   VerticalAlignment="Center"
+                   Text="{Binding ElementName=WindowRoot, Path=Manipulation.Current}"/>
+
+        <TextBlock Grid.Column="0" Grid.Row="1"
+                   Margin="10,5"
+                   Text="Delta:"/>
+        <TextBlock Grid.Column="1" Grid.Row="1"
+                   VerticalAlignment="Center"
+                   Text="{Binding ElementName=WindowRoot, Path=Manipulation.Delta}"/>
+    </Grid>
+</Window>
